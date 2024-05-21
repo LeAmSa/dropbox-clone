@@ -5,6 +5,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { Header } from "@/components/header";
 
 import { ptBR } from "@clerk/localizations";
+import { ThemeProvider } from "@/components/theme/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,9 +24,16 @@ export default function RootLayout({
     <ClerkProvider localization={ptBR}>
       <html lang="pt-br">
         <body className={inter.className}>
-          <Header />
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <Header />
 
-          {children}
+            {children}
+          </ThemeProvider>
         </body>
       </html>
     </ClerkProvider>
