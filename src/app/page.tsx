@@ -1,4 +1,4 @@
-import { ArrowRightIcon, MoveRightIcon } from "lucide-react";
+import { MoveRightIcon } from "lucide-react";
 import Link from "next/link";
 
 export default function Home() {
